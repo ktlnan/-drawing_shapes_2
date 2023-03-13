@@ -37,10 +37,19 @@ namespace оаип_лаба9
         }
         public override void MoveTo(int x, int y) // переопределенный метод передвижения
         {
-            this.Clear();
-            this.x += x;
-            this.y += y;
-            this.Draw();
+            if (!((this.x + x < 0 && this.y + y < 0) || (this.y + y < 0) || (this.x + x > Init.pictureBox.Width && this.y + y < 0)
+             || (this.x + this.w + x > Init.pictureBox.Width) || (this.x + x > Init.pictureBox.Width && this.y + y > Init.pictureBox.Height)
+             || (this.y + this.h + y > Init.pictureBox.Height) || (this.x + x < 0 && this.y + y > Init.pictureBox.Height) || (this.x + x < 0)))
+            {
+                this.x += x;
+                this.y += y;
+                DeleteF(this, false);
+                Draw();
+            }
+            else
+            {
+                MessageBox.Show("Фигура не может выйти за границу");
+            }
         }
     }
 }

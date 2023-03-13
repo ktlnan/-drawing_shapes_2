@@ -11,8 +11,8 @@ namespace оаип_лаба9
         public static List<Operator> operators = new List<Operator>();
         static OperatorContainer()
         {
-            operators.Add(new Operator('S'));
-            operators.Add(new Operator('C'));
+            operators.Add(new Operator('R'));
+           
             operators.Add(new Operator('M'));
             operators.Add(new Operator('D'));
             operators.Add(new Operator(','));
