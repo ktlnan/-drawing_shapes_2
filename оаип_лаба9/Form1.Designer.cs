@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxInputString = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,14 +45,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "История команд";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(771, 122);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 366);
-            this.textBox1.TabIndex = 1;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -62,13 +54,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Командная строка";
             // 
-            // textBox2
+            // textBoxInputString
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox2.Location = new System.Drawing.Point(37, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(423, 27);
-            this.textBox2.TabIndex = 3;
+            this.textBoxInputString.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBoxInputString.Location = new System.Drawing.Point(37, 75);
+            this.textBoxInputString.Name = "textBoxInputString";
+            this.textBoxInputString.Size = new System.Drawing.Size(423, 27);
+            this.textBoxInputString.TabIndex = 3;
+            this.textBoxInputString.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxInputString_KeyDown);
             // 
             // pictureBox1
             // 
@@ -79,16 +72,25 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(771, 122);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(244, 364);
+            this.listBox1.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1037, 520);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxInputString);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -101,9 +103,9 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox textBoxInputString;
         private PictureBox pictureBox1;
+        private ListBox listBox1;
     }
 }

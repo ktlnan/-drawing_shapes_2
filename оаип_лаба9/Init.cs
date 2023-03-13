@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace оаип_лаба9
 {
-    internal class Init
+    public class Init
     {
+        public static Bitmap bitmap;
+        public static Pen pen;
+        public static PictureBox pictureBox;
     }
 }
