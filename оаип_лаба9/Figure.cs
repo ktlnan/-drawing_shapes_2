@@ -13,6 +13,7 @@ namespace оаип_лаба9
         public int w;
         public int h;
         public string name;
+        public string createname;
         internal static object figure;
 
         abstract public void Draw();

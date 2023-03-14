@@ -12,7 +12,6 @@ namespace оаип_лаба9
         static OperatorContainer()
         {
             operators.Add(new Operator('R'));
-           
             operators.Add(new Operator('M'));
             operators.Add(new Operator('D'));
             operators.Add(new Operator(','));

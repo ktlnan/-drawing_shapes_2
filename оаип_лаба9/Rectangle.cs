@@ -9,12 +9,15 @@ namespace оаип_лаба9
     public class Rectangle : Figure
     {
         public int x, y, w, h; // вводим переменные
-        public Rectangle(int x, int y, int width, int height, string? v)
+        public Rectangle(int x, int y, int width, int height, string name)
         {
             this.x = x;
             this.y = y;
             this.w = width;
             this.h = height;
+           this.createname = "Создался прямоугольник ";
+            this.name = name;
+            this.createname += Convert.ToString(name);
         }
         public Rectangle() // обнуляем значения
         {
@@ -32,7 +35,7 @@ namespace оаип_лаба9
         public override void Clear()
         {
             Graphics g = Graphics.FromImage(Init.bitmap);
-            g.DrawRectangle(new Pen(Color.White, 5), this.x, this.y, this.w, this.h);
+            g.Clear(Color.White);
             Init.pictureBox.Image = Init.bitmap;
         }
         public override void MoveTo(int x, int y) // переопределенный метод передвижения

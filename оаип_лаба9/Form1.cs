@@ -15,7 +15,7 @@ namespace оаип_лаба9
             Pen pen = new Pen(Color.Black, 2);
             Init.pen = pen;
             Init.pictureBox = pictureBox1;
-            textBoxInputString.Text = "R(name,x,y,w,h)";
+            textBoxInputString.Text = "R(name,h,w,x,y)";
         }
         private bool IsNotOperation(char item) //Функция проверки символов операций
         {
@@ -128,7 +128,7 @@ namespace оаип_лаба9
                 Figure rectangle = new Rectangle(Convert.ToInt32(Convert.ToString(operands.Pop().value)), Convert.ToInt32(Convert.ToString(operands.Pop().value)), Convert.ToInt32(Convert.ToString(operands.Pop().value)), Convert.ToInt32(Convert.ToString(operands.Pop().value)), Convert.ToString(operands.Pop().value));
                 op = new Operator(rectangle.Draw, 'R');
                 ShapeContainer.AddFigure(rectangle);
-                listBox1.Items.Add(rectangle.name);
+                listBox1.Items.Add(rectangle.createname);
                 op.operatorMethod();
                 rectangle.Draw();
             }
@@ -136,10 +136,9 @@ namespace оаип_лаба9
             {
                 try
                 {
+                    
                     int y = Convert.ToInt32(Convert.ToString(operands.Pop().value));
                     int x = Convert.ToInt32(Convert.ToString(operands.Pop().value));
-                    int w = Convert.ToInt32(Convert.ToString(operands.Pop().value));
-                    int h = Convert.ToInt32(Convert.ToString(operands.Pop().value));
                     name = Convert.ToString(operands.Pop().value);
                     string movename = "Прямоугольник " + name + " переместился";
                     if (ShapeContainer.FindFigure(name) == null)
@@ -149,6 +148,7 @@ namespace оаип_лаба9
                     }
                     else
                     {
+                       
                         ShapeContainer.FindFigure(name).MoveTo(x, y);
                         if (listBox1.Items.Contains(movename))
                         {

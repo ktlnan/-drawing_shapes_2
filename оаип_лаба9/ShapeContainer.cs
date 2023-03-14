@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace оаип_лаба9
 {
-    public class ShapeContainer
+    public  class ShapeContainer
     {
         public static List<Figure> figurelist = new List<Figure>();
 
@@ -25,5 +25,6 @@ namespace оаип_лаба9
             }
             return null;
         }
+        
     }
 }
